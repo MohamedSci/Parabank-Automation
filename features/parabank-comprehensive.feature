@@ -2,6 +2,7 @@ Feature: Comprehensive Testing of Parabank Features
   As a user of Parabank,
   I want to test all major functionalities
   So that I can ensure the application works as expected.
+
   # =====================================
   # Account Services
   # =====================================
@@ -10,6 +11,7 @@ Feature: Comprehensive Testing of Parabank Features
     Given I am logged in
     When I navigate to the account services page
     Then I should see all available account service options
+
   # =====================================
   # Open New Account
   # =====================================
