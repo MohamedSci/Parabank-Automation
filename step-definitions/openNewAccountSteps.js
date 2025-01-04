@@ -1,15 +1,29 @@
-const { Given, When, Then, After } = require('@cucumber/cucumber');
-const { expect } = require('@playwright/test');
-const testData = require('../fixtures/testData');
+import { validCredentials } from '../fixtures/testData.json';
+import { Given, When, Then } from '@cucumber/cucumber';
+import { expect } from '@playwright/test';
+
 
 Given('I am logged in', async function () {
-  await this.init();
-  await this.page.goto("https://parabank.parasoft.com/parabank/login");
-  await this.page.locator('input[name="username"]').fill(testData.validCredentials.username);
-  await this.page.locator('input[name="password"]').fill(testData.validCredentials.password);
-  await this.page.locator('input[type="submit"]').click();
+  if (!this.page) {
+    throw new Error('Page is not defined');
+  }
+  await this.page.goto('https://parabank.parasoft.com/parabank/login');
+  await this.page.fill('input[name="username"]', validCredentials.username);
+  await this.page.fill('input[name="password"]', validCredentials.password);
+  await this.page.click('input[type="submit"]');
   expect(await this.page.locator('a:has-text("Log Out")')).toBeVisible();
 });
+
+
+
+// Given('I am logged in', async function () {
+//   await this.init();
+//   await this.page.goto("https://parabank.parasoft.com/parabank/login");
+//   await this.page.locator('input[name="username"]').fill(testData.validCredentials.username);
+//   await this.page.locator('input[name="password"]').fill(testData.validCredentials.password);
+//   await this.page.locator('input[type="submit"]').click();
+//   expect(await this.page.locator('a:has-text("Log Out")')).toBeVisible();
+// });
 
 When('I navigate to the Open New Account page', async function () {
   await this.page.click('a:has-text("Open New Account")');

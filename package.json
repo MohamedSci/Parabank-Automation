@@ -17,12 +17,13 @@
     "parabank-automation": "file:"
   },
   "devDependencies": {
-    "@axe-core/playwright": "",
-    "@cucumber/cucumber": "",
-    "@cucumber/pretty-formatter": "",
-    "@playwright/test": "",
-    "allure-playwright": "",
-    "axios": "",
-    "playwright": ""
+    "@axe-core/playwright": "^4.10.1",
+    "@cucumber/cucumber": "^11.1.1",
+    "@cucumber/pretty-formatter": "^1.0.1",
+    "@playwright/test": "^1.49.1",
+    "allure-playwright": "^3.0.7",
+    "axios": "^1.7.9",
+    "playwright": "^1.49.1",
+    "playwright-bdd": "^8.0.1"
   }
 }
