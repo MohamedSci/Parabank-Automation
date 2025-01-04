@@ -7,6 +7,7 @@ module.exports = defineConfig({
   reporter: [['html', { outputFolder: 'reports' }], ['allure-playwright']],
   baseURL: 'https://parabank.parasoft.com/parabank',
   use: {
+    baseURL: 'https://parabank.parasoft.com/parabank',
     headless: true,
     screenshot: 'on',
     video: 'retain-on-failure',
