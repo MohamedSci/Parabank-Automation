@@ -1,0 +1,21 @@
+{
+  "name": "parabank-automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "show-report": "npx playwright show-report",
+    "open-report": "npx allure generate && allure open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@playwright/test": "^1.49.1",
+    "allure-playwright": "^3.0.7",
+    "axios": "^1.7.9",
+    "playwright": "^1.49.1"
+  }
+}
