@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
+    "bddgen:export": "npx bddgen export",
     "test:e2e": "cucumber-js --require cucumber.conf.js --require step-definitions/**/*.js --format @cucumber/pretty-formatter",
     "bdd": "cucumber-js",
     "show-report": "npx playwright show-report",
