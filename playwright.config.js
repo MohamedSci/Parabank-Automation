@@ -24,9 +24,9 @@ module.exports = defineConfig({
     },
   ],
 
-  webServer: {
-    command: 'npm run start', // Command to start the application (optional)
-    port: 3000, // Port for the application
-    reuseExistingServer: !process.env.CI, // Reuse server in local environments
-  },
+  // webServer: {
+  //   command: 'npm run start', // Command to start the application (optional)
+  //   port: 3000, // Port for the application
+  //   reuseExistingServer: !process.env.CI, // Reuse server in local environments
+  // },
 });
