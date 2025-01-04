@@ -164,7 +164,7 @@ test.describe('Login Tests', () => {
     const loginPage = new LoginPage(page);
     const dashboardPage = new DashboardPage(page);
 
-    await page.goto('/');
+    await page.goto(`${process.env.BASE_URL}/login`);
     await loginPage.login(testData.validCredentials.username, testData.validCredentials.password);
 
     const isDashboardVisible = await dashboardPage.isDashboardVisible();
@@ -174,7 +174,7 @@ test.describe('Login Tests', () => {
   test('should show error message with invalid credentials', async ({ page }) => {
     const loginPage = new LoginPage(page);
 
-    await page.goto('/');
+    await page.goto(`${process.env.BASE_URL}/login`);
     await loginPage.login(testData.invalidCredentials.username, testData.invalidCredentials.password);
 
     const errorMessage = await loginPage.getErrorMessage();
@@ -286,7 +286,7 @@ Example:
 const { injectAxe, checkA11y } = require('@axe-core/playwright');
 
 test('should check accessibility', async ({ page }) => {
-  await page.goto('/');
+  await page.goto(`${process.env.BASE_URL}/login`);
   await injectAxe(page);
   await checkA11y(page);
 });
