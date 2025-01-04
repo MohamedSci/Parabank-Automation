@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "test:e2e": "cucumber-js --require cucumber.conf.js --require tests/acceptance/stepDefinitions/**/*.js --format @cucumber/pretty-formatter",
+    "test:e2e": "cucumber-js --require cucumber.conf.js --require step-definitions/**/*.js --format @cucumber/pretty-formatter",
     "bdd": "cucumber-js",
     "show-report": "npx playwright show-report",
     "open-report": "npx allure generate && allure open"
@@ -14,15 +14,15 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@axe-core/playwright": "^4.10.1",
-    "@playwright/test": "^1.49.1",
-    "allure-playwright": "^3.0.7",
-    "axios": "^1.7.9",
-    "parabank-automation": "file:",
-    "playwright": "^1.49.1"
+    "parabank-automation": "file:"
   },
   "devDependencies": {
-    "@cucumber/cucumber": "^7.3.1",
-    "@cucumber/pretty-formatter": "^1.0.1"
+    "@axe-core/playwright": "",
+    "@cucumber/cucumber": "",
+    "@cucumber/pretty-formatter": "",
+    "@playwright/test": "",
+    "allure-playwright": "",
+    "axios": "",
+    "playwright": ""
   }
 }
