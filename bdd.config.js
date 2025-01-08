@@ -1,25 +1,9 @@
-const { defineBddConfig } = require('@playwright/test');
+const { defineBddConfig } = require('playwright-bdd');
 
 module.exports = defineBddConfig({
-  timeout: 30000,
-  retries: 1,
-  reporter: [
-    ['html', { outputFolder: 'reports' }],
-    ['allure-playwright'],
-  ],
-  use: {
-    baseURL: 'https://parabank.parasoft.com/parabank',
-    headless: true,
-    screenshot: 'on',
-    video: 'retain-on-failure',
-  },
-  projects: [
-    {
-      name: 'Cucumber-BDD',
-      testDir: './features',
-      use: {
-        baseURL: 'https://parabank.parasoft.com/parabank',
-      },
-    },
-  ],
+  stepDefinitionsDir: 'step-definitions', // Directory for your step definition files
+  steps: "step-definitions/**/*.js", // Glob pattern for step definition files
+  features: "features/**/*.feature",
+  featuresRoot: 'features', // Root directory for your feature files
+  format: 'gherkin', // Format for feature files
 });
